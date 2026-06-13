@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+   <link rel="stylesheet" href="./style.css"> 
+</head>
+<body>
+<header>
+  <nav class="sticky-nav">
+    <div class="nav">
+
+      <!-- Logo -->
+      <div class="logo">
+        <h3>Utsav <span class="dot">●</span></h3>
+      </div>
+
+      <!-- Desktop Links -->
+      <ul class="nav-links hideOnMobile">
+        <li><a href="#">Home</a></li>
+        <li><a href="#Aboutme">Skills</a></li>
+        <li><a href="#Projects">Projects</a></li>
+        <li><a href="#contactme">Contact Me</a></li>
+        <li><a href="#footer">Footer</a></li>
+      </ul>
+
+      <!-- Dark Mode Toggle -->
+    <button id="darkMode" class="dark-btn">
+  <svg width="24" height="24" viewBox="0 0 56 56" style="overflow: visible;">
+    <path
+      class="sun"
+      d="M56 28C56 43.464 43.464 56 28 56C12.536 56 0 43.464 0 28C0 12.536 12.536 0 28 0C43.464 0 56 12.536 56 28Z"
+      fill="yellow">
+    </path>
+  </svg>
+</button>
+      <!-- Mobile Menu Button -->
+      <div class="menu-button hideOnDesktop" onclick="showSidebar()">
+        <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26" fill="#fff">
+          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+        </svg>
+      </div>
+
+      <!-- Mobile Sidebar -->
+      <ul class="sidebar" id="sidebar">
+        <li onclick="hideSidebar()">
+          <a href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="#fff">
+              <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+            </svg>
+          </a>
+        </li>
+
+        <li><a href="#Aboutme" onclick="hideSidebar()">Skills</a></li>
+        <li><a href="#Projects" onclick="hideSidebar()">Projects</a></li>
+        <li><a href="#contactme" onclick="hideSidebar()">Contact Me</a></li>
+        <li><a href="#footer" onclick="hideSidebar()">Footer</a></li>
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+<main>
+<div class="container">
+ <div class="box left">Hey! I'm <span class="highlight">Utsav</span><br>a distinguished full stack web developer</div>
+  <div class="box image"><img src="myimage.png" alt="my photo"></div>
+  <div class="box left">Interested in working together? Let's talk</div>
+  <div class="box right">Design Digital Experiences That Inspire!</div>
+  <div class="box right">
+  
+  uku6398@gmail.com<br>
+  <img src="map.png" alt="Map of Vidisha" class="map-img"><br>
+  Vidisha M.P.
+</div>
+
+</div>
+
+
+<div class="about" id="Aboutme">
+  <div class="skills">
+    <div class="skillblock">
+      <div class="skill">
+        <div class="skillcon">
+          <img src="html.png" alt="HTML">
+          <img src="css.png" alt="CSS">
+          <img src="javascript.png" alt="JavaScript">
+          <img src="react.png" alt="React">
+          <img src="nodejs.png" alt="Node.js">
+          <img src="database.png" alt="Database">
+          <img src="blockchain.png" alt="Blockchain">
+          <img src="machinelearning.png" alt="Machine Learning">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+ <div class="projects"  id="Projects">
+    <div class="project">
+      <h3>Project 1: <a href="https://67f943d9441a180b5e2d7145--dainty-puffpuff-c7a92a.netlify.app/">GitHub Profile viewer</a><span class="arrow">⏷</span></h3>
+      <div class="content">
+        Tech Stack Used: Html,css,js,React,Api
+
+      </div>
+    </div>
+    <div class="project">
+      <h3>Project 2:<a href="https://6808e3d557a4f4df368d86f9--symphonious-torrone-892bc9.netlify.app/ ">Old Portfolio</a> <span class="arrow">⏷</span></h3>
+      <div class="content">
+        Teck stack Used: Html,css,js
+      </div>
+    </div>
+    <div class="project">
+      <h3>Project 3: <a href="https://67eea9d5b6033ec47d7eec9b--jocular-croissant-ddbf5c.netlify.app/ ">Blue Black Team</a> <span class="arrow">⏷</span></h3>
+      <div class="content">
+        Tech Stack Used: Html,Css
+      </div>
+    </div>
+  </div>
+
+
+
+<section id="contactme">
+  <div class="container1">
+    <form id="contactForm">
+      <h2>Let's Work Together</h2>
+      <p class="contact-text">
+        Have a project in mind? Send me a message and I'll get back to you soon.
+      </p>
+
+      <div class="row">
+        <div class="input-box">
+          <input type="text" id="name" placeholder="Your Name" required>
+        </div>
+
+        <div class="input-box">
+          <input type="email" id="email" placeholder="Email Address" required>
+        </div>
+      </div>
+
+      <div class="input-box">
+        <textarea id="message" rows="5" placeholder="Write your message..." required></textarea>
+      </div>
+
+      <button type="submit">
+        Send Message →
+      </button>
+    </form>
+  </div>
+</section>
+
+
+
+</main>
+<footer id="footer">
+  <div class="policies">
+    <div class="icon">
+      <a href="https://www.linkedin.com/in/utsav-kumar-879938299/">
+        <img src="linkdin.png" alt="linkedin">
+      </a>
+      <a href="https://github.com/utsav-kumar-droid">
+        <img src="github.png" alt="github">
+      </a>
+      <a href="./myresume.pdf" download>
+        <img src="resume.png" alt="resume">
+      </a>
+    </div>
+    <p>© Copyright, all rights reserved</p>
+  </div>
+</footer>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const skill = document.querySelector('.skill');
+    const original = document.querySelector('.skillcon');
+    
+    // Wrap skillcon inside a wrapper
+    const wrapper = document.createElement('div');
+    wrapper.classList.add('skillcon-wrapper');
+    original.parentNode.insertBefore(wrapper, original);
+    wrapper.appendChild(original);
+
+    // Clone and append
+    const clone = original.cloneNode(true);
+    wrapper.appendChild(clone);
+  });
+
+
+    
+    document.querySelectorAll('.project').forEach(box => {
+      box.addEventListener('click', () => {
+        box.classList.toggle('active');
+      });
+    });
+  
+</script>
+
+<script>
+  function showSidebar() {
+    document.getElementById('sidebar').style.display = 'flex';
+  }
+
+  function hideSidebar() {
+    document.getElementById('sidebar').style.display = 'none';
+  }
+</script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="script.js"></script>
+
+
+    
+</body>
+</html>
