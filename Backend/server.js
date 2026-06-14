@@ -20,11 +20,12 @@ app.use(cors({
 
 // ✅ MongoDB connection (better logging)
 mongoose.connect(process.env.MONGO_URI)
-.then(() => console.log("MongoDB connected"))
+.then(() => {
+    console.log("MongoDB connected ✅");
+})
 .catch((err) => {
-    console.error("MongoDB connection error:", err);
+    console.error("MongoDB connection error ❌:", err);
 });
-
 // ✅ TEST ROUTE (IMPORTANT for Render debugging)
 app.get("/", (req, res) => {
     res.status(200).send("Backend is working 🚀");
@@ -38,6 +39,8 @@ app.get("/health", (req, res) => {
 // ✅ POST API
 app.post("/contact", async (req, res) => {
     try {
+        console.log("📩 Incoming request body:", req.body);
+
         const { name, email, message } = req.body;
 
         if (!name || !email || !message) {
@@ -47,24 +50,25 @@ app.post("/contact", async (req, res) => {
             });
         }
 
-        const newContact = new Contact({
-            name,
-            email,
-            message
-        });
+        const newContact = new Contact({ name, email, message });
 
-        await newContact.save();
+        const savedContact = await newContact.save();
 
-        res.status(201).json({
+        console.log("✅ Saved to DB:", savedContact);
+
+        return res.status(201).json({
             success: true,
-            message: "Message saved successfully"
+            message: "Message saved successfully",
+            data: savedContact
         });
 
     } catch (error) {
+        console.error("❌ CONTACT ROUTE ERROR:");
         console.error(error);
-        res.status(500).json({
+
+        return res.status(500).json({
             success: false,
-            message: "Server error"
+            message: error.message // 👈 IMPORTANT: shows real error
         });
     }
 });
