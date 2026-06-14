@@ -1,43 +1,26 @@
 const mongoose = require("mongoose");
 
 const contactSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: [true, "Name is required"],
-        trim: true
-    },
+    name: { type: String, required: true, trim: true },
 
     email: {
         type: String,
-        required: [true, "Email is required"],
+        required: true,
         trim: true,
         lowercase: true,
-        match: [
-            /^\S+@\S+\.\S+$/,
-            "Please provide a valid email address",
-        ],
+        match: /^\S+@\S+\.\S+$/
     },
 
-    message: {
-        type: String,
-        required: [true, "Message is required"],
-        trim: true
-    },
+    message: { type: String, required: true, trim: true },
 
-    createdAt: {
-        type: Date,
-        default: Date.now
-    }
+    createdAt: { type: Date, default: Date.now }
 });
 
-/* ======================================= */
-/* MIDDLEWARE: NORMALIZE EMAIL STRINGS     */
-/* ======================================= */
-contactSchema.pre("save", function (next) {
+// SAFE middleware (no next)
+contactSchema.pre("save", function () {
     if (this.email) {
         this.email = this.email.trim().toLowerCase();
     }
-    next();
 });
 
 module.exports = mongoose.model("Contact", contactSchema);
