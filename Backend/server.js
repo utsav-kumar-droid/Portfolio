@@ -13,7 +13,6 @@ app.use(express.json());
 // ✅ CORS (allow frontend + local testing)
 app.use(cors({
     origin: [
-        "https://portfolio-gilt-delta-96.vercel.app",
         "http://localhost:3000"
     ]
 }));
