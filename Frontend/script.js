@@ -94,32 +94,26 @@ form.addEventListener("submit", async (e) => {
     };
 
 
-    try {
-
-        const response = await fetch("http://localhost:5000/contact", {
-
+   try {
+    const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/contact`,
+        {
             method: "POST",
-
             headers: {
                 "Content-Type": "application/json"
             },
-
             body: JSON.stringify(data)
-        });
+        }
+    );
 
+    const result = await response.json();
 
-        const result = await response.json();
+    alert(result.message);
 
+    form.reset();
 
-        alert(result.message);
-
-        form.reset();
-
-
-    } catch(error) {
-
-        alert("Something went wrong");
-
-    }
+} catch(error) {
+    alert("Something went wrong");
+}
 
 });
