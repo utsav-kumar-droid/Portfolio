@@ -13,7 +13,8 @@ app.use(express.json());
 // ✅ CORS (allow frontend + local testing)
 app.use(cors({
     origin: [
-        "http://localhost:3000"
+        "http://localhost:3000",
+        "https://portfolio-6fw7.vercel.app"
     ]
 }));
 
