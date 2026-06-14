@@ -95,9 +95,7 @@ form.addEventListener("submit", async (e) => {
 
 
    try {
-    const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/contact`,
-        {
+    const response = await fetch(`${API_URL}/contact`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
