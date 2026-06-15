@@ -59,7 +59,7 @@ app.post("/contact", async (req, res) => {
 
         return res.status(201).json({
             success: true,
-            message: "Message saved successfully",
+            message: "Message send successfully",
             data: savedContact
         });
 
